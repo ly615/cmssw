@@ -36,7 +36,9 @@
 #include "FWCore/Framework/interface/MakerMacros.h"
 #include "FWCore/ServiceRegistry/interface/Service.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
+#include "FWCore/Common/interface/Provenance.h"
 
+#include "SimDataFormats/GeneratorProducts/interface/GenEventInfoProduct.h"
 #include <DataFormats/HepMCCandidate/interface/GenParticle.h>
 #include <DataFormats/HepMCCandidate/interface/GenParticleFwd.h>
 #include <DataFormats/L1Trigger/interface/L1EmParticle.h>
@@ -47,6 +49,10 @@
 #include <DataFormats/L1Trigger/interface/L1MuonParticleFwd.h>
 #include <DataFormats/L1Trigger/interface/L1EtMissParticle.h>
 #include <DataFormats/L1Trigger/interface/L1EtMissParticleFwd.h>
+#include <DataFormats/L1Trigger/interface/Muon.h>
+#include <DataFormats/L1Trigger/interface/EGamma.h>
+#include <DataFormats/L1Trigger/interface/Tau.h>
+#include <DataFormats/L1Trigger/interface/Jet.h>
 
 #include <DQMServices/Core/interface/MonitorElement.h>
 #include <DQMServices/Core/interface/DQMEDAnalyzer.h>
@@ -81,7 +87,12 @@ class L1Validator : public DQMEDAnalyzer {
     edm::EDGetTokenT<l1extra::L1JetParticleCollection> _L1ExtraTauJetSource;
     edm::EDGetTokenT<l1extra::L1MuonParticleCollection> _L1ExtraMuonSource;
     //edm::EDGetTokenT<l1extra::L1EtMissParticleCollection> _L1ExtraMETSource;
-
+    edm::EDGetTokenT<l1t::MuonBxCollection> _L1MuonBXSource;
+    edm::EDGetTokenT<l1t::EGammaBxCollection> _L1EGammaBXSource;
+    edm::EDGetTokenT<l1t::TauBxCollection> _L1TauBXSource;
+    edm::EDGetTokenT<l1t::JetBxCollection> _L1JetBXSource;
+    edm::EDGetTokenT<GenEventInfoProduct>         _srcToken;
+  
     L1ValidatorHists _Hists;
 
     //---------------helper functions------------------
