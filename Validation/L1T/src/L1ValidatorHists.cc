@@ -33,20 +33,20 @@ void L1ValidatorHists::Book(DQMStore::IBooker &iBooker){
   for(int i=0; i<Type::Number; i++){
     N[i] = iBooker.book1D( (Name[i]+"_N").c_str(), (Name[i]+" Number").c_str(), 5, -0.5, 4.5);
 
-    Eff_Pt[i] = iBooker.book1D( (Name[i]+"_Eff_Pt").c_str(), (Name[i]+" Efficiency vs Pt").c_str(), 30, 0, 150);
-    Eff_Pt_Denom[i] = iBooker.book1D( (Name[i]+"_Eff_Pt_Denom").c_str(), (Name[i]+" Efficiency vs Pt Denom").c_str(), 30, 0, 150);
-    Eff_Pt_Nomin[i] = iBooker.book1D( (Name[i]+"_Eff_Pt_Nomin").c_str(), (Name[i]+" Efficiency vs Pt Nomin").c_str(), 30, 0, 150);
-    Eff_Eta[i] = iBooker.book1D( (Name[i]+"_Eff_Eta").c_str(), (Name[i]+" Efficiency vs Eta").c_str(), 20, -4, 4);
-    Eff_Eta_Denom[i] = iBooker.book1D( (Name[i]+"_Eff_Eta_Denom").c_str(), (Name[i]+" Efficiency vs Eta Denom").c_str(), 20, -4, 4);
-    Eff_Eta_Nomin[i] = iBooker.book1D( (Name[i]+"_Eff_Eta_Nomin").c_str(), (Name[i]+" Efficiency vs Eta Nomin").c_str(), 20, -4, 4);
-    TurnOn_15[i] = iBooker.book1D( (Name[i]+"_TurnOn_15").c_str(), (Name[i]+" Turn On (15 GeV)").c_str(), 30, 0, 150);
-    TurnOn_15_Denom[i] = iBooker.book1D( (Name[i]+"_TurnOn_15_Denom").c_str(), (Name[i]+" Turn On (15 GeV) Denom").c_str(), 30, 0, 150);
-    TurnOn_15_Nomin[i] = iBooker.book1D( (Name[i]+"_TurnOn_15_Nomin").c_str(), (Name[i]+" Turn On (15 GeV) Nomin").c_str(), 30, 0, 150);
-    TurnOn_30[i] = iBooker.book1D( (Name[i]+"_TurnOn_30").c_str(), (Name[i]+" Turn On (30 GeV)").c_str(), 30, 0, 150);
-    TurnOn_30_Denom[i] = iBooker.book1D( (Name[i]+"_TurnOn_30_Denom").c_str(), (Name[i]+" Turn On (30 GeV) Denom").c_str(), 30, 0, 150);
-    TurnOn_30_Nomin[i] = iBooker.book1D( (Name[i]+"_TurnOn_30_Nomin").c_str(), (Name[i]+" Turn On (30 GeV) Nomin").c_str(), 30, 0, 150);
-    dR[i] = iBooker.book1D( (Name[i]+"_dR").c_str(), (Name[i]+" dR").c_str(), 20, 0, 1);
-    dPt[i] = iBooker.book1D( (Name[i]+"_dPt").c_str(), (Name[i]+" dPt").c_str(), 20, -1, 1);
+    Eff_Pt[i] = iBooker.book1D( (Name[i]+"_Eff_Pt").c_str(), (Name[i]+" Efficiency vs Pt; Gen p_{T} [GeV]; L1T Efficiency").c_str(), 30, 0, 150);
+    Eff_Pt_Denom[i] = iBooker.book1D( (Name[i]+"_Eff_Pt_Denom").c_str(), (Name[i]+" Efficiency vs Pt Denom; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    Eff_Pt_Nomin[i] = iBooker.book1D( (Name[i]+"_Eff_Pt_Nomin").c_str(), (Name[i]+" Efficiency vs Pt Nomin; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    Eff_Eta[i] = iBooker.book1D( (Name[i]+"_Eff_Eta").c_str(), (Name[i]+" Efficiency vs #eta (Gen p_{T} > 10GeV); Gen #eta; L1T Efficiency").c_str(), 20, -4, 4);
+    Eff_Eta_Denom[i] = iBooker.book1D( (Name[i]+"_Eff_Eta_Denom").c_str(), (Name[i]+" Efficiency vs #eta Denom; Gen #eta; Events").c_str(), 20, -4, 4);
+    Eff_Eta_Nomin[i] = iBooker.book1D( (Name[i]+"_Eff_Eta_Nomin").c_str(), (Name[i]+" Efficiency vs #eta Nomin; Gen #eta; Events").c_str(), 20, -4, 4);
+    TurnOn_15[i] = iBooker.book1D( (Name[i]+"_TurnOn_15").c_str(), (Name[i]+" Turn On (15 GeV); Gen p_{T} [GeV]; L1T Efficiency").c_str(), 30, 0, 150);
+    TurnOn_15_Denom[i] = iBooker.book1D( (Name[i]+"_TurnOn_15_Denom").c_str(), (Name[i]+" Turn On (15 GeV) Denom; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    TurnOn_15_Nomin[i] = iBooker.book1D( (Name[i]+"_TurnOn_15_Nomin").c_str(), (Name[i]+" Turn On (15 GeV) Nomin; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    TurnOn_30[i] = iBooker.book1D( (Name[i]+"_TurnOn_30").c_str(), (Name[i]+" Turn On (30 GeV); Gen p_{T} [GeV]; L1T Efficiency").c_str(), 30, 0, 150);
+    TurnOn_30_Denom[i] = iBooker.book1D( (Name[i]+"_TurnOn_30_Denom").c_str(), (Name[i]+" Turn On (30 GeV) Denom; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    TurnOn_30_Nomin[i] = iBooker.book1D( (Name[i]+"_TurnOn_30_Nomin").c_str(), (Name[i]+" Turn On (30 GeV) Nomin; Gen p_{T} [GeV]; Events").c_str(), 30, 0, 150);
+    dR[i] = iBooker.book1D( (Name[i]+"_dR").c_str(), (Name[i]+" #DeltaR; #DeltaR(L1 object, Gen object); Events").c_str(), 50, 0, 1);
+    dPt[i] = iBooker.book1D( (Name[i]+"_dPt").c_str(), (Name[i]+" #Deltap_{T}; (p_{T}^{L1}-p_{T}^{Gen})/p_{T}^{Gen}; Events").c_str(), 100, -2, 2);
   }
 
 }
@@ -59,18 +59,17 @@ void L1ValidatorHists::Fill(int i, const reco::LeafCandidate *GenPart, const rec
      TurnOn_30_Denom[i]->Fill(GenPart->pt());
   } else {
 
+     bool ptmatched = ((RecoPart->pt()-GenPart->pt())/GenPart->pt() > -0.15);
+     if(abs(GenPart->pdgId())==15) ptmatched = ((RecoPart->pt()-GenPart->pt())/GenPart->pt() > -0.65);
+     if(abs(GenPart->pdgId())<=5 || abs(GenPart->pdgId())==21) ptmatched = ((RecoPart->pt()-GenPart->pt())/GenPart->pt() > -0.3);
      Eff_Pt_Denom[i]->Fill(GenPart->pt());
      if(GenPart->pt()>10)Eff_Eta_Denom[i]->Fill(GenPart->eta());
-     if(RecoPart->pt() > GenPart->pt())Eff_Pt_Nomin[i]->Fill(GenPart->pt());
-     if(RecoPart->pt() > GenPart->pt() && GenPart->pt()>10)Eff_Eta_Nomin[i]->Fill(GenPart->eta());
-     if(RecoPart->pt() > GenPart->pt())Eff_Pt[i]->Fill(GenPart->pt());
+     if(ptmatched)Eff_Pt_Nomin[i]->Fill(GenPart->pt());
+     if(ptmatched && GenPart->pt()>10)Eff_Eta_Nomin[i]->Fill(GenPart->eta());
      TurnOn_15_Denom[i]->Fill(GenPart->pt());
      TurnOn_30_Denom[i]->Fill(GenPart->pt());
-     if(RecoPart->pt()>15 && RecoPart->pt() > GenPart->pt()) TurnOn_15_Nomin[i]->Fill(GenPart->pt());
-     if(RecoPart->pt()>30 && RecoPart->pt() > GenPart->pt()) TurnOn_30_Nomin[i]->Fill(GenPart->pt());
-     if(RecoPart->pt()>15 && RecoPart->pt() > GenPart->pt()) TurnOn_15[i]->Fill(GenPart->pt());
-     if(RecoPart->pt()>30 && RecoPart->pt() > GenPart->pt()) TurnOn_30[i]->Fill(GenPart->pt());
-     if(RecoPart->pt() > GenPart->pt() && GenPart->pt()>10)Eff_Eta[i]->Fill(GenPart->eta());
+     if(RecoPart->pt()>15 && ptmatched) TurnOn_15_Nomin[i]->Fill(GenPart->pt());
+     if(RecoPart->pt()>30 && ptmatched) TurnOn_30_Nomin[i]->Fill(GenPart->pt());
      dR[i]->Fill(reco::deltaR(GenPart->eta(), GenPart->phi(), RecoPart->eta(), RecoPart->phi()));
      dPt[i]->Fill( (RecoPart->pt()-GenPart->pt()) / GenPart->pt() );
   }
